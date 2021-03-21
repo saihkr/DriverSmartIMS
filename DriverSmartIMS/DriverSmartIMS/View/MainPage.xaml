@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DriverSmartIMS.View.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="10">
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Editor Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                        Text="{Binding DriverInfoText}"
+                        AutoSize="TextChanges"/>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1"
+                             VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                    <Button Text="Reload"  VerticalOptions="FillAndExpand"
+                            Command="{Binding ReloadCommand}"/>
+
+                    <Button Text="Clear"  VerticalOptions="FillAndExpand"
+                            Command="{Binding ClearCommand}"/>
+
+                    <Button Text="Run" VerticalOptions="FillAndExpand"
+                            Command="{Binding RunCommand}"/>
+                </StackLayout>
+
+
+                <CollectionView Grid.Row="1" Grid.ColumnSpan="2"
+                        IsVisible="{Binding ShowResults}"
+                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                        BackgroundColor="Transparent"
+                        ItemsSource="{Binding DriverTripReport}"                                
+                        SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding OutPutString}"
+                                BackgroundColor="Transparent" 
+                                VerticalTextAlignment="Center" HorizontalTextAlignment="Start"                                    
+                                HorizontalOptions="Center"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
