@@ -83,6 +83,10 @@ namespace DriverSmartIMS.ViewModel
 
         private bool CanRunDriverDetails() { return !string.IsNullOrEmpty(DriverInfoText); }
 
+        //
+        // Summary:
+        //     Generates the drivers trip reports.
+        //
         private async void OnRunDriverDetails()
         {
             try
@@ -120,7 +124,10 @@ namespace DriverSmartIMS.ViewModel
         }
         #endregion
 
-
+        //
+        // Summary:
+        //     clears the editor
+        //
         public Command ClearCommand => new Command(() => 
         { 
             DriverInfoText = string.Empty;
@@ -128,6 +135,10 @@ namespace DriverSmartIMS.ViewModel
             DriverTripReport.Clear();
         });
 
+        //
+        // Summary:
+        //     To load the editor with text from driverinfo.txt in inputs folder
+        //
         public Command ReloadCommand => new Command(() => { Initialize(); });
     }
 }
