@@ -1,6 +1,8 @@
 # DriverSmartIMS
 Provides the driver trips reports
+
 The code will process an input file.
+
 Each line in the input file will start with a command. There are two possible commands.
 The first command is Driver, which will register a new Driver in the app. Example: Driver
 Dan The second command is Trip, which will record a trip attributed to a driver. The line
