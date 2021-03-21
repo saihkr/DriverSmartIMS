@@ -43,4 +43,4 @@ Inputs can be given in two ways
 
 **Procedure 1**:  User can provide the informaion in the editor in line by line format
 
-**Procedure 2** : Befure running the program, user can provide the inputs in driverinfo.txt in the path **DriverSmartIMS/DriverSmartIMS/DriverSmartIMS/Inputs**
+**Procedure 2** : Before running the program, user can provide the inputs in driverinfo.txt in the path **DriverSmartIMS/DriverSmartIMS/DriverSmartIMS/Inputs**
